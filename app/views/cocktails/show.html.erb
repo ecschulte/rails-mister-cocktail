@@ -5,12 +5,6 @@
     <div><%= link_to "Back to all cocktails", cocktails_path, class: "btn btn-primary mt-3" %></div>
   </div>
 
-  <%= link_to "Edit Dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
-
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.ingredient.name.capitalize %></li>
-    <% end %>
-  </ul>
+  <%= link_to "Add Dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
 
 </div>

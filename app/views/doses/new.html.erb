@@ -6,9 +6,9 @@
     <div><%= link_to "Back to all cocktails", cocktails_path, class: "btn btn-primary mt-3" %></div>
   </div>
 
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.association :ingredient %>
+  <%= simple_form_for [ @cocktail, @dose ] do |f| %>
     <%= f.input :description %>
-    <%= f.submit %>
+    <%= f.association :ingredient %>
+    <%= f.submit "Create dose", class: "btn btn-primary" %>
   <% end %>
 </div>
