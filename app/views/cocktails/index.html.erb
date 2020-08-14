@@ -7,8 +7,7 @@
 
 <div class="row">
   <% @cocktails.each do |cocktail| %>
-
-  <%= link_to "Edit Dose", new_cocktail_dose_path(cocktail), class: "btn btn-primary" %>
+    <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-primary" %>
 
   <% end %>
 </div>
