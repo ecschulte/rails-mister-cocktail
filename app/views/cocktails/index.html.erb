@@ -7,8 +7,12 @@
 
 <div class="row">
   <% @cocktails.each do |cocktail| %>
-    <%= cl_image_tag(cocktail.photo.key),
-      width: 400, height: 300, crop: :fill) %>
+    <% if cocktail.photo.attached?  %>
+
+    <%= cl_image_tag cocktail.photo.key, width: 400, height: 300, crop: :fill %>
+      <% else %>
+        <%= cl_image_tag 'vxvwkbxsczv5tvd2rol8', width: 400, height: 300, crop: :fill %>
+      <% end %>
     <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-primary" %>
 
   <% end %>
